@@ -1,11 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 import { Card } from "../card/card.component";
-import "./card-list.styles.css";
+
+const CardListStyles = styled.div`
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
 export const CardList = props => (
-  <div className="card-list">
+  <CardListStyles>
     {props.monsters.map(monster => (
       <Card key={monster.id} monster={monster} />
     ))}
-  </div>
+  </CardListStyles>
 );
